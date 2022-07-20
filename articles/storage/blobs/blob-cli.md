@@ -81,7 +81,7 @@ file="$path$filename"
 
 #Upload a single named file
 az storage blob upload \
-    --file $file \
+    --file $filename \
     --container-name $containerName \
     --account-name $storageAccount \
     --auth-mode login
@@ -90,7 +90,7 @@ az storage blob upload \
 az storage blob upload-batch \
     --destination $containerName \
     --source $path \
-    --pattern *.png \
+    --pattern $imageFiles \
     --account-name $storageAccount \
     --auth-mode login \
     --if-unmodified-since $lastModified
